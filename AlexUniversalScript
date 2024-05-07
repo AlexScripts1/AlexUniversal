@@ -1,0 +1,23 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Scrip Has Been Invalif", HidePremium = true, SaveConfig = true, IntroText = "Welcome"})
+
+local Tab = Window:MakeTab({
+    Name = "Script",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddLabel("Join The Discord For The New Script")
+
+Tab:AddButton({
+     Name = "Click Here To join the discord", 
+     Callback = function() 
+     if setclipboard or toclipboard or writeclipboard then
+      setclipboard("https://discord.com/invite/eyqr6edtMn")
+      toclipboard("https://discord.com/invite/eyqr6edtMn") 
+      else
+     error("bruh")
+     end
+      print("button pressed") 
+      end
+ })
