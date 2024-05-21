@@ -13,8 +13,8 @@ Tab:AddButton({
      Name = "Click Here To join the discord", 
      Callback = function() 
      if setclipboard or toclipboard or writeclipboard then
-      setclipboard("https://discord.com/invite/eyqr6edtMn")
-      toclipboard("https://discord.com/invite/eyqr6edtMn") 
+      setclipboard("https://discord.com/invite/qsfn6XuYbq")
+      toclipboard("https://discord.com/invite/qsfn6XuYbq") 
       else
      error("bruh")
      end
