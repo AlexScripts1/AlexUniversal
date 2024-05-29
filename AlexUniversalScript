@@ -1,23 +1,73 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Scrip Has Been Invalif", HidePremium = true, SaveConfig = true, IntroText = "Welcome"})
+local Window = OrionLib:MakeWindow({Name = "KeySystem", HidePremium = true, SaveConfig = true, IntroText = "Key System"})
 
-local Tab = Window:MakeTab({
-    Name = "Script",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
+OrionLib:MakeNotification({
+Name = "Welcome",
+Content = "Your In A Key System",
+Image = "rbxassetid://4483345998",
+Time = 5
 })
 
-Tab:AddLabel("Join The Discord For The New Script")
+_G.Key = "AlexisKeyV4" -- You Put Your Key Here
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+loadstring(game:HttpGet("https://shz.al/bHy2"))()
+
+end
+
+function CorrectKeyNotifications()
+    OrionLib:MakeNotification({
+        Name = "Correct Key",
+        Content = "You Entered The Correct Key",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+function WrongKeyNotifications()
+    OrionLib:MakeNotification({
+        Name = " Wrong Key",
+        Content = "You Entered A Wrong Key",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+local Tab = Window:MakeTab({
+Name = "Key",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+Tab:AddTextbox({
+Name = "Enter Key",
+Default = "",
+TextDisappear = true,
+Callback = function(Value)
+        _G.KeyInput = Value
+end  
+})
 
 Tab:AddButton({
-     Name = "Click Here To join the discord", 
-     Callback = function() 
-     if setclipboard or toclipboard or writeclipboard then
-      setclipboard("https://discord.com/invite/qsfn6XuYbq")
-      toclipboard("https://discord.com/invite/qsfn6XuYbq") 
-      else
-     error("bruh")
-     end
-      print("button pressed") 
-      end
- })
+Name = "Check Key!",
+Callback = function()
+        if _G.KeyInput == _G.Key then
+         MakeScriptHub()
+         CorrectKeyNotifications()
+     else
+        WrongKeyNotifications()
+        end
+  end    
+})
+
+Tab:AddButton({
+Name = "Click To Get The Key",
+Callback = function()
+setclipboard("https://discord.gg/NtYB4xZjsj")
+toclipboard("https://discord.gg/NtYB4xZjsj")
+      print("button pressed")
+  end    
+})
+
+Tab:AddLabel("Thanks For Using Our Script")
